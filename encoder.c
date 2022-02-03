@@ -69,7 +69,7 @@ printf("\033[0m");
 	memset( shellcode3, 0, sizeof(shellcode3)*2);
 
 	for (int o=0; o<sizeof(shellcode)-1; o++) {
-				printf("\033[0;36m");
+		printf("\033[0;36m");
                 printf("\\x%02x", shellcode[o]);
                 printf("\033[0m");
         }
@@ -82,13 +82,13 @@ printf("\033[0m");
                 printf("%02x", shellcode[o]);
                 printf("\033[0m");
         }
-    printf("\033[01;33m");
+        printf("\033[01;33m");
 	printf("\n\n[-] Original Shellcode Length : %d\n",sizeof(shellcode)-1);
 	printf("\033[0m");
 
 	for (int i=0; i<(sizeof(shellcode)*2); i++) {
 	        memcpy(&shellcode1[i],(unsigned char*)&shellcode[i], sizeof(shellcode[i])*2);
-            memcpy(&shellcode2[i],(unsigned char*)&shellcode[i], sizeof(shellcode[i])*2);
+                memcpy(&shellcode2[i],(unsigned char*)&shellcode[i], sizeof(shellcode[i])*2);
 	        memcpy(&shellcode3[i],(unsigned char*)&shellcode[i], sizeof(shellcode[i])*2);
 	}
 
@@ -97,7 +97,7 @@ printf("\033[0m");
 	printf("**********************");
 	printf("\033[0m");
 
-    printf("\033[01;33m");
+        printf("\033[01;33m");
 	printf("\n\n[-] Encoded Shellcode:\n\n");
 	printf("\033[0m");
 
@@ -114,12 +114,11 @@ printf("\033[0m");
 	printf("\033[0m");
 
  	for (int i=0; i<sizeof(shellcode)-1; i++) {
-			shellcode2[i] = shellcode2[i] ^ XORVAL;
-			printf("\033[01;34m");
+		shellcode2[i] = shellcode2[i] ^ XORVAL;
+		printf("\033[01;34m");
         	printf("\\x%02x", shellcode2[i]);
         	printf("\033[0m");
 	}
-
 
         printf("\n\n");
         printf("\033[0;32m");
