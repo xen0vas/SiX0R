@@ -97,7 +97,7 @@ printf("\033[0m");
 
 
         printf("\033[01;33m");
-	printf("\n\n[*] Original Shellcode Length : %d\n",sizeof(shellcode)-1);
+	printf("\n\n[*] Original Shellcode Length : %d\n",sizeof(shellcode));
 	printf("\033[0m");
 
 	for (int i=0; i<(sizeof(shellcode)*2); i++) {
