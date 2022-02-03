@@ -116,7 +116,7 @@ printf("\033[0m");
 	printf("\033[0m");
 
 	for (int i=0; i<sizeof(shellcode)-1; i++) {
-		shellcode2[i] = shellcode2[i] ^ XORVAL; //shellcode2[sizeof(shellcode)-1];
+		shellcode2[i] = shellcode2[i] ^ XORVAL; 
 		printf("\033[01;34m");
         	printf("\\x%02x", shellcode2[i]);
         	printf("\033[0m");
@@ -140,7 +140,7 @@ printf("\033[0m");
         printf("\033[0m");
 
         for (int i=0; i<sizeof(shellcode)-1; i++) {
-                shellcode3[i] = shellcode3[i] ^ XORVAL; //shellcode3[sizeof(shellcode)-1];
+                shellcode3[i] = shellcode3[i] ^ XORVAL; 
                 printf("\033[01;34m");
                 printf("%02x", shellcode3[i]);
                 printf("\033[0m");
