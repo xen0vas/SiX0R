@@ -11,4 +11,4 @@ gcc SeX0Rme.c -o enc
 
 -----------
 
-<img src="./XoR.gif" style="display:block;margin-left:auto;margin-right:auto;border:1px solid #1A1B1C;" width="770" height="750">
+<img src="./XoR.gif" style="display:block;margin-left:auto;margin-right:auto;border:1px solid #1A1B1C;" width="870" height="750">
