@@ -2,7 +2,7 @@
 
 SeX0Rme is a simple XOR encoder 
 
->> ### Install and Run
+>> ### Compile and Run
 
 ```
 gcc encoder.c -o enc 
