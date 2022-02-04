@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define XORVAL 0x3a // the value that will be used to xor with every byte
+#define XORKEY 0x3a // the value that will be used to xor with every byte
 
 /* https://www.exploit-db.com/shellcodes/50291 */
 unsigned char shellcode[] = \
@@ -111,11 +111,11 @@ printf("\033[0m");
 	printf("\033[0m");
 
         printf("\033[01;33m");
-	printf("\n\n[*] Encoded Shellcode:\n\n");
+	printf("\n\n[*] X0Red Shellcode:\n\n");
 	printf("\033[0m");
 
 	for (int i=0; i<sizeof(shellcode)-1; i++) {
-		shellcode2[i] = shellcode2[i] ^ XORVAL; 
+		shellcode2[i] = shellcode2[i] ^ XORKEY; 
 		printf("\033[01;34m");
         	printf("\\x%02x", shellcode2[i]);
         	printf("\033[0m");
@@ -127,7 +127,7 @@ printf("\033[0m");
 	printf("\033[0m");
 
  	for (int i=0; i<sizeof(shellcode)-1; i++) {
-		shellcode1[i] = shellcode1[i] ^ XORVAL; 
+		shellcode1[i] = shellcode1[i] ^ XORKEY; 
 		printf("\033[01;34m");
 		printf("0x%02x,", shellcode1[i]);
 		printf("\033[0m");
@@ -139,7 +139,7 @@ printf("\033[0m");
         printf("\033[0m");
 
         for (int i=0; i<sizeof(shellcode)-1; i++) {
-                shellcode3[i] = shellcode3[i] ^ XORVAL; 
+                shellcode3[i] = shellcode3[i] ^ XORKEY; 
                 printf("\033[01;34m");
                 printf("%02x", shellcode3[i]);
                 printf("\033[0m");
