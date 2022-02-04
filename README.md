@@ -1,6 +1,6 @@
 # SeX0Rme
 
-SeX0Rme is a simple XOR encoder 
+SeX0Rme is a simple XOR cryptor 
 
 >> ### Compile and Run
 
