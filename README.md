@@ -5,7 +5,7 @@ SeX0Rme is a simple XOR cryptor
 >> ### Compile and Run
 
 ```
-gcc encoder.c -o enc 
+gcc SeX0Rme.c -o enc 
 ./enc
 ```
 
