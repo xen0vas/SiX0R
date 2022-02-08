@@ -36,7 +36,7 @@ int main(int argc, char * argv[])
 
 printf("\033[01;33m");
 printf("                                                 \n");
-printf("                         _\\|/_                   \n");
+printf("                         _\\|/_                  \n");
 printf("                         (o o)			 \n");
 printf("           +----------oOO-{_}-OOo----------+	 \n");
 printf("                    			         \n");    
