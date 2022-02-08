@@ -43,7 +43,7 @@ printf("                    			         \n");
 printf("                        SeX0Rme			 \n");	 	
 printf("                  -=---------------=-            \n");
 printf("                                                 \n");
-printf("                   Simple XOR Encoder            \n");
+printf("                   Simple X0R Encoder            \n");
 printf("                    Author: @xen0vas             \n"); 
 printf("                                                 \n");
 printf("\033[0m");
