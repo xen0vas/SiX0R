@@ -1,11 +1,11 @@
-# SeX0Rme
+# SeX0R
 
 SeX0Rme is a simple XOR cryptor 
 
 >> ### Compile and Run
 
 ```
-gcc SeX0Rme.c -o enc 
+gcc SeX0R.c -o enc 
 ./enc
 ```
 
