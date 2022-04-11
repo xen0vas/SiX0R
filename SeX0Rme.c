@@ -40,7 +40,7 @@ printf("                         _\\|/_                  \n");
 printf("                         (o o)			 \n");
 printf("           +----------oOO-{_}-OOo----------+	 \n");
 printf("                    			         \n");    
-printf("                        SeX0Rme			 \n");	 	
+printf("                         SeX0R      		 \n");	 	
 printf("                  -=---------------=-            \n");
 printf("                                                 \n");
 printf("                   Simple X0R Encoder            \n");
