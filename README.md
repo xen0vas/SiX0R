@@ -1,11 +1,11 @@
-# SeX0R
+# SiX0R
 
-SeX0R is a simple XOR cryptor 
+SiX0R is a simple XOR cryptor 
 
 >> ### Compile and Run
 
 ```
-gcc SeX0R.c -o enc 
+gcc SiX0R.c -o enc 
 ./enc
 ```
 
